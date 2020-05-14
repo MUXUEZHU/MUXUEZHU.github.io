@@ -1,1 +1,381 @@
-hello
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>一只纸鹤呀</title>
+    <style>
+    body{
+        background:url("http://m.qpic.cn/psc?/V14ehzbf2nORvh/I4OEOPrz6D2aFnaB6dwLRc7NwmEdVxyZm2U7JZMls0gVEf4fIw3jMyuiwr30nWpmdxuN.08e1QSoVJkZHIGOhdcW1.uVYULB77Wq9MdIFm0!/b&bo=VAY4BAAAAAARF04!&rf=viewer_4");
+    }
+    *{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-decoration: none;
+    }
+    .container{
+        position: relative;
+    }
+    .container .con-header{
+        width: 100%;
+        height: 150px;
+        background: rgba(0, 0, 0,0.7);
+        text-align: center;
+        line-height: 100px;
+    }
+    .container .con-header h1{
+        color: #fff;
+        color: 45px;
+    }
+    .container .con-top{
+        margin: auto;
+        height: 500px;
+        width: 900px;
+        background: #fff;
+        border-radius: 20px;
+        margin-top: -40px;
+        box-shadow: 1px 1px 3px 1px #bbb;
+        padding: 10px;
+    }
+    .con-top .con-top-inner{
+        height: 100%;
+        width: 100%;
+        border-radius: 20px;
+        display: flex;
+        overflow: hidden;
+    }
+    .con-top .con-top-inner .circle{
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .con-top .con-top-inner .circle li{
+        height: 100px;
+        width: 88.7%;
+        background: #eee;
+        margin:0px 0 20px 20px;
+        border-radius: 50px 0 0 50px;
+        display: flex;
+        align-items: center;
+    }
+    .con-top .con-top-inner .circle li a{
+        display: block;
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        background: rgb(55, 189, 73);
+        text-align: center;
+        line-height: 80px;
+        margin-left: 20px;
+    }
+    .con-top .con-top-inner .circle li:nth-child(2) a{
+        background: rgb(59, 174, 228);
+    }
+    .con-top .con-top-inner .circle li:nth-child(3) a{
+        background: rgb(205, 223, 43);
+    }
+    .con-top .con-top-inner .circle li:nth-child(4) a{
+        background: rgb(185, 120, 45);
+    }
+    .con-top .con-top-inner .circle li a span{
+        color: #fff;
+        font-size:20px;
+        font-weight: bold;
+    }
+    .con-top .con-top-inner .circle li:hover{
+        background: yellow;
+    }
+    .con-top .con-top-inner .circle li a span:hover{
+        color: red;
+    }
+    .con-top .con-top-inner .imgs{
+        flex:9;
+    }
+    .con-top .con-top-inner .imgs img{
+        width: 100%;
+        height: 500px;
+        border-radius: 0 20px 20px 20px;
+    }
+    .con-content{
+        margin: 30px 0;
+        width: 100%;
+        height:320px;
+        display: flex;
+        justify-content: space-around;
+        background: rgba(228, 223, 225, 0.1);
+    }
+    .con-content .con-content-imgitem{
+        margin: 25px 20px 0;
+        height: 270px;
+        width: 180px;
+        position: relative;
+        box-shadow: 1px 1px 3px 1px #bbb;
+        overflow: hidden;
+    }
+    .con-content .con-content-imgitem img{
+        height: 270px;
+        width: 180px;
+    }
+    .con-content .con-content-imgitem:hover {
+        margin-top:10px;
+    }
+    .con-content .con-content-imgitem .con-content-title{
+        height: 100px;
+        width: 100%;
+        background: rgba(0,0,0,0.5);
+        position: absolute;
+        bottom: -100px;
+       transition: .5s;
+    }
+    .con-content .con-content-imgitem .con-content-title p{
+       padding: 10px;
+       font-size: 15px;
+       color: #fff;
+    }
+    .con-content .con-content-imgitem:hover .con-content-title{
+        bottom: 0;
+    }
+    .container h1{
+        color: #fff;
+        position: absolute;
+        left: 40%;
+    }
+    .con-imgbox{
+        height: 480px;
+        width: 100%;
+        display: flex;
+        padding: 10px;
+        margin-top: 80px;
+    }
+     .con-imgbox .con-img-left{
+      flex: 5;
+      display: flex;
+      padding: 10px;
+      overflow: hidden;
+      background: #fff;
+    }
+    .con-imgbox .con-img-left .titleft{
+      flex: 4;
+      overflow: hidden;
+      margin-right: 10px;
+    }
+    .con-imgbox .con-img-left .titleft img{
+        width: 100%;
+    }
+    .con-imgbox .con-img-left .titright{
+        flex:6;
+        overflow: hidden;
+   }
+    .con-imgbox .con-img-left .titright img{
+        width: 100%;
+        border-radius: 10px;
+    }
+    .con-imgbox .con-img-left .titright img:nth-child(2){
+        margin-top: 10px;
+    }
+    .con-imgbox .con-img-right{
+        flex: 5;
+        display: flex;
+        padding: 10px;
+    }
+    .con-imgbox .con-img-right .left{
+        flex: 6;
+        margin:20px;
+        background: #fff;
+        padding: 15px;
+    }
+    .con-imgbox .con-img-right .left img{
+       width: 100%;
+    }
+    .con-imgbox .con-img-right .left p{
+        color: rgb(49, 51, 144);
+        font-weight: bold;
+        text-align: center;
+        margin: 23px;
+        font-size: 18px;
+    }
+    .con-imgbox .con-img-right .right{
+        flex: 4;
+        margin:20px;
+        overflow: hidden;
+        background:#fff;
+        padding: 10px;
+    }
+    .con-imgbox .con-img-right .right img{
+        width: 100%;
+    }
+    .con-imgbox .con-img-right .right p{
+        color: rgb(49, 51, 144);
+        font-weight: bold;
+        text-align: center;
+        margin: 12px;
+        font-size: 18px;
+    }
+    .my-content{
+        height: 520px;
+        width: 100%;
+        margin-top: 20px;
+    }
+    .my-content p{
+        color: #fff;
+        text-align: center;
+        font-weight: bold;
+        font-size: 32px;
+    }
+    .my-content .my-container{
+        display: flex;
+        padding: 10px;
+        height: 350px;
+        margin-top: 20px;
+        background: rgba(228, 223, 225, 0.1);
+    }
+     .my-container .my-con-left{
+        flex: 6;
+        display: flex;
+    }
+    .my-container .my-con-right{
+        flex: 5;
+        margin-left:10px ;
+        border-radius: 50%;
+        overflow: hidden;
+        box-shadow: 1px 1px 5px 1px  rgb(214, 120, 243);
+    }
+     .my-container .my-con-left   img{
+      width: 250px;
+      box-shadow: 1px 1px 5px 1px  rgb(214, 120, 243);
+    }
+    .my-container .my-con-left  p{
+        color: #fff;
+        font-weight: bold;
+        font-size: 18px;
+        width: 20px;
+        margin: 30px;
+        text-shadow:0.1em 0.1em 0.01em rgb(214, 120, 243);
+    }
+    .my-container .my-con-right img{
+        width: 100%;
+    }
+    #audio{
+        opacity: 0.5;
+        width: 100%;
+    }
+    </style>
+    <script src="jquery-1.11.1.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="con-header">
+            <h1>喜欢你是我最伟大的成功</h1>
+           </div>
+        <div class="con-top">
+            <div class="con-top-inner">
+                <div class="circle" id="circle">
+                    <ol>
+                        <li><a href="javascript:void(0)"><span>Y</span></a></li>
+                        <li><a href="javascript:void(0)"><span>Y</span></a></li>
+                        <li><a href="javascript:void(0)"><span>Q</span></a></li>
+                        <li><a href="javascript:void(0)"><span>X</span></a></li>
+                    </ol>
+                </div>
+                <div class="imgs" id="imgs">
+                    <ul>
+                        <li><img src="http://m.qpic.cn/psc?/V14ehzbf2nORvh/I4OEOPrz6D2aFnaB6dwLRZ.HVMAFgjcEokRbD9ERGaL8.GQHPz8W0qnbEbnQ3bs6TUrox4TVnGVovPIbBxMqB8SjmGrJcJWZCvfwlf*Xj2A!/b&bo=UwY4BAAAAAARF0k!&rf=viewer_4" alt=""></li>
+                        <li><img src="http://m.qpic.cn/psc?/V14ehzbf2nORvh/I4OEOPrz6D2aFnaB6dwLRT0rZir1*h44n5XCZo7kDe5syZn7UC7C7jV88loMYzWOSHPlKkrTwNZdgLdg5rS8TAf8rbAYb1ryA0HS79WlIdI!/b&bo=*AY4BAAAAAARF.Y!&rf=viewer_4" alt=""></li>
+                        <li><img src="http://m.qpic.cn/psc?/V14ehzbf2nORvh/I4OEOPrz6D2aFnaB6dwLRe9OWWWhAIktDX.bSRsvZJu8OP1M4nsCkibu2yFoLKykYR1suxANlfirWCcLoNhUTlbmkaygmfUqFH*xYt.Y9oQ!/b&bo=6AUSBAAAAAARB8s!&rf=viewer_4" alt=""></li>
+                        <li><img src="http://m.qpic.cn/psc?/V14ehzbf2nORvh/I4OEOPrz6D2aFnaB6dwLRbSXRjpxsaRYyRJiF7tgnp2Kd3hRYLrCjpffmuqKgL7doVhRGqQWNlT17E.3Sgojr57oZoTpFJzIyIwI8ADCGpg!/b&bo=VAY4BAAAAAARF04!&rf=viewer_4" alt=""></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="con-content">
+        <div class="con-content-imgitem">
+                <img src="http://m.qpic.cn/psc?/V14ehzbf2nORvh/I4OEOPrz6D2aFnaB6dwLRVSdrMC4Pq0eDql7.uqItm13Rmvw0yd.vJS5Sy1y2I16ch5UYFHwanrsxH6Pkxs*H6Z1s0P9LXYmdrVg2.muSOA!/b&bo=OARUBgAAAAARF04!&rf=viewer_4" alt="">
+            <div class="con-content-title">
+                <p>我是希望自己能像货车一样,能装很多自己喜欢的东西然后也能装下很多的你们。</p>
+            </div>
+        </div>
+        <div class="con-content-imgitem">
+            <img src="http://m.qpic.cn/psc?/V14ehzbf2nORvh/I4OEOPrz6D2aFnaB6dwLRWhU1DJQlN0FBejqG204DPI*ZYC3XPgXUkxLQRES188AIgQzzt7MStdUywiNbwcmggO8gMH85LdcP.K0KbByqkw!/b&bo=OARUBgAAAAARF04!&rf=viewer_4" alt="">
+            <div class="con-content-title">
+                    <p>幸好有你们，幸亏有你们。</p>
+                </div>
+        </div>
+        <div class="con-content-imgitem">
+                <img src="http://m.qpic.cn/psc?/V14ehzbf2nORvh/I4OEOPrz6D2aFnaB6dwLRc1nxisYaZg7gmQj1Z2iFgVbUiTZPFfmoYpj267wVmonikbA4BLThn6FkiRNK2Wa0L5M4Yhm2FXD5aMI5fMYe6U!/b&bo=OAQpBgAAAAARFzM!&rf=viewer_4" alt="">
+            <div class="con-content-title">
+                    <p>找到你们是我最伟大的成功。</p>
+                  </div>
+        </div>
+        <div class="con-content-imgitem">
+                <img src="http://m.qpic.cn/psc?/V14ehzbf2nORvh/I4OEOPrz6D2aFnaB6dwLRURblAA*PDvieRbSu3fwj8.m47Cz3YV1mOlYqJtSqR8x9p33mLFleB9.LBU3ay*ZPe8CmqKf1YzIDDiujD62ZyM!/b&bo=OAQFBgAAAAARBw8!&rf=viewer_4" alt="">
+            <div class="con-content-title">
+                    <p>我觉得自己是一个特别幸运的人, 因为自己集了太多的爱于一身</p>
+            </div>    
+        </div>
+        <div class="con-content-imgitem">
+            <img src="http://m.qpic.cn/psc?/V14ehzbf2nORvh/I4OEOPrz6D2aFnaB6dwLRYYQq48AXQtn3KoZJGn2unpcxgE0iecHkrO42bUUFl1euDcMzkEIZKx7G2jYKSpIpENEiXKM8UimiKiNOJ9F5U0!/b&bo=OARUBgAAAAARF04!&rf=viewer_4" alt="">
+            <div class="con-content-title">
+                    <p>我为他们去付出,因为一直以来他们也为我付出,希望我们可以互相拥有,互相成长,互相陪伴。</p>
+            </div>
+        </div>
+        </div>
+        <h1>你要是愿意，我就永远存在</h1>
+            <div class="con-imgbox">
+            <div class="con-img-left">
+                <div class="titleft">
+                    <img src="http://m.qpic.cn/psc?/V14ehzbf2nORvh/I4OEOPrz6D2aFnaB6dwLRVHWFkambOrtrNpManYz15qvKDTZggjEKau1CNefqgbRN5uvzHBSSdLfzac8tpsXKHYxIxv8zd3H1NV9hleLQR0!/b&bo=OASABwAAAAARF5s!&rf=viewer_4" alt="">
+                </div>
+                <div class="titright">
+                    <img src="http://a1.qpic.cn/psc?/V14ehzbf2nORvh/POwAobJtn54NCYlSXd4O2XyHfr6VLuhbLTer48H5BUnjzIRkdDD3OuNjKbRGqm.vk8nKxd5LgnqWYmTKf1d7kQ!!/c&ek=1&kp=1&pt=0&bo=sgKqAQAAAAARFzs!&tl=3&vuin=1377762717&tm=1577606400&sce=60-2-2&rf=viewer_4" alt="">
+                    <img src="http://m.qpic.cn/psc?/V14ehzbf2nORvh/I4OEOPrz6D2aFnaB6dwLRXYqVcfQnv0qubCoaPLIqKihPEf0Yg5yTRp57W*wfuORZEt4zSk5fSEJJTWfjK75jdXPPif3jpo4nTUTLJ7DAvE!/b&bo=Rgg4BAAAAAARF1I!&rf=viewer_4" alt="">
+                </div>
+            </div>
+            <div class="con-img-right">
+                <div class="left">
+                       <img src="http://a1.qpic.cn/psc?/V14ehzbf2nORvh/POwAobJtn54NCYlSXd4O2T5LtFmT3sSpF8kPbIK0co5BMoHxhuji6rONSAzfUEHrDfr4uN.ybJtinR*qTAwovw!!/c&ek=1&kp=1&pt=0&bo=gAJfAgAAAAARF*8!&tl=3&vuin=1377762717&tm=1577455200&sce=60-2-2&rf=viewer_4" alt="">
+                <p>你要加油，你要努力，你要努力来见我</p>
+                    </div>
+                <div class="right">
+                    <img src="http://a1.qpic.cn/psc?/V14ehzbf2nORvh/POwAobJtn54NCYlSXd4O2aDtPaR1uxI58R9BdIITE8RdEeZIhjwK8cJBseC2ZGbUvc*MS9IYFpryw9KVhNcGlw!!/c&ek=1&kp=1&pt=0&bo=0ALBBAAAAAARFzc!&tl=3&vuin=1377762717&tm=1577534400&sce=60-2-2&rf=viewer_4" alt="">
+                    <p>我在未来等你</p>
+                </div>
+                </div>
+        </div>
+        <div class="my-content">
+           <p>我听过最好听的四个字不是我喜欢你，而是</p>
+           <p>易烊千玺</p>
+        <div class="my-container">
+           <div class="my-con-left">
+             
+             <img src="http://m.qpic.cn/psc?/V14ehzbf2nORvh/I4OEOPrz6D2aFnaB6dwLReURduuYJJ.p322E0DyXBaOJv45pBN8Qi93JPg83OKonoeT9zxTqxhtFBG50xRBExZc.j2gMIYdwy3G8VMH0hxM!/b&bo=OATyBQAAAAARF.s!&rf=viewer_4" alt="">
+            
+          
+                <p>我不在乎</p>
+                <p>活得平凡辛苦</p>
+                <p> 日子渺小重复</p>
+                <p>儿时做的梦褪色荒芜</p>
+                <p>我不孤独</p>
+                <p>在有你的旅途</p>
+                <p>我就心无旁骛</p>
+                <p>陪你看日出在暮色中漫步</p>
+          
+            </div>
+           <div class="my-con-right">
+            <img src="http://a1.qpic.cn/psc?/V14ehzbf2nORvh/POwAobJtn54NCYlSXd4O2V9a*64y5VBuvFO.r3qHHVxBhS2*UXbzVzVa2ORmPUMc6M8R8VKeOXOZDQ.q739j8w!!/c&ek=1&kp=1&pt=0&bo=YwPwAgAAAAARF7I!&tl=3&vuin=1377762717&tm=1577538000&sce=60-2-2&rf=viewer_4" alt="">
+           </div>
+        </div>
+     </div>
+    </div>
+    <audio id="audio" src="https://sharefs.yun.kugou.com/201912291716/f12bdaa977a049bdd0c7eeb60c74251d/G173/M02/0E/09/jZQEAF38JY2AZYIsADNKegIoHxQ679.mp3" controls autoplay="true"></audio>
+    <script>
+    $(function(){
+     $("#circle li").mouseenter(function(){
+         $("#imgs li").eq($(this).index()).show().siblings("li").hide();
+     });
+    })
+    </script>
+</body>
+</html>
